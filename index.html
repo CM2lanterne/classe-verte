@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classe Verte - Informations pour les Parents</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Style Général */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #4CAF50, #2E8B57);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            animation: slideIn 2s ease;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shine {
+            to {
+                left: 100%;
+            }
+        }
+
+        section {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #4CAF50;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 3px;
+            background: #4CAF50;
+            animation: underline 0.5s ease forwards;
+        }
+
+        @keyframes underline {
+            to {
+                width: 100%;
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #f4f4f4;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        ul li:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        ul li .icon {
+            font-size: 1.5rem;
+            color: #4CAF50;
+            margin-right: 10px;
+            animation: bounce 1s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #2E8B57;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #4CAF50;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Classe Verte - Activités des Enfants</h1>
+    </header>
+    <section>
+        <h2>Message aux parents</h2>
+        <p>Bienvenue sur la page des activités de vos enfants en classe verte. Nous espérons que ces informations vous rassureront et vous permettront de suivre leurs aventures.</p>
+    </section>
+    <section>
+        <h2>Activités prévues</h2>
+        <ul>
+            <li>
+                <span class="icon">🌲</span>
+                <span>Randonnée en forêt</span>
+                <button onclick="alert('Randonnée: découverte de la faune et flore.')">Détails</button>
+            </li>
+            <li>
+                <span class="icon">♻️</span>
+                <span>Ateliers sur l’environnement</span>
+                <button onclick="alert('Ateliers sur le recyclage et la protection de la nature.')">Détails</button>
+            </li>
+            <li>
+                <span class="icon">⭐</span>
+                <span>Observation des étoiles</span>
+                <button onclick="alert('Initiation à l’astronomie et observation des constellations.')">Détails</button>
+            </li>
+            <li>
+                <span class="icon">🔥</span>
+                <span>Soirée feu de camp</span>
+                <button onclick="alert('Chansons et histoires autour du feu de camp.')">Détails</button>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2>Galerie</h2>
+        <p>Des photos des activités seront bientôt disponibles ici.</p>
+    </section>
+    <footer>
+        <p>Pour toute question, contactez l’équipe enseignante.</p>
+    </footer>
+    <script>
+        // Animation JS pour faire apparaître les sections au scroll
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            const triggerBottom = window.innerHeight * 0.8;
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < triggerBottom) {
+                    section.classList.add('show');
+                }
+            });
+        });
+
+        // Effet interactif pour les boutons
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    button.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
