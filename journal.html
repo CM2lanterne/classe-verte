@@ -5,153 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journal de la Classe Verte</title>
     <style>
-        /* Style global */
         body {
-            font-family: 'Georgia', serif;
-            background-color: #faf7f0;
+            font-family: 'Arial', sans-serif;
+            background-color: #fdfdfd;
             color: #333;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background: #d4af37;
-            color: #fff;
+            background: linear-gradient(135deg, #42a5f5, #1e88e5);
+            color: white;
             text-align: center;
-            padding: 30px 10px;
-            font-family: 'Times New Roman', Times, serif;
-            border-bottom: 5px solid #b8860b;
+            padding: 20px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 3em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-size: 2.5em;
         }
 
         header p {
-            margin: 5px 0 0;
+            margin: 10px 0 0;
             font-size: 1.2em;
-            font-style: italic;
         }
 
         main {
-            padding: 40px;
-            max-width: 1200px;
+            padding: 20px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        /* Mise en page style journal */
-        .article {
+        section {
             margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 2px dotted #cccccc;
         }
 
-        .article h2 {
+        section h2 {
             font-size: 2em;
-            color: #b8860b;
-            margin: 0 0 10px 0;
-            font-family: 'Times New Roman', Times, serif;
+            color: #1e88e5;
+            margin-bottom: 10px;
         }
 
-        .article p {
+        section p {
             font-size: 1.1em;
+            line-height: 1.6;
             text-align: justify;
-            margin: 0 0 10px 0;
-            line-height: 1.8;
         }
 
-        .image {
-            float: right;
-            margin: 0 0 15px 15px;
-            border: 3px solid #ccc;
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+        section img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Style des boutons */
-        .btn {
-            display: inline-block;
-            background: #b8860b;
+        .next-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #42a5f5;
             color: white;
-            padding: 10px 15px;
             text-decoration: none;
+            font-size: 1.2em;
             border-radius: 5px;
-            font-size: 1em;
-            font-family: 'Arial', sans-serif;
-            margin-top: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
-        .btn:hover {
-            background: #8b5e02;
+        .next-button:hover {
+            background-color: #1e88e5;
+            transform: scale(1.05);
         }
 
         footer {
             text-align: center;
             padding: 20px;
-            background: #d4af37;
+            background: #42a5f5;
             color: white;
-            margin-top: 40px;
-            font-size: 0.9em;
-            font-family: 'Arial', sans-serif;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Journal de la Classe Verte</h1>
-        <p>Récits, aventures et découvertes au château de Taillé</p>
+        <p>Bienvenue dans notre aventure !</p>
     </header>
 
     <main>
-        <!-- Article 1 -->
-        <div class="article">
-            <h2>Bienvenue dans notre classe verte</h2>
-            <img src="https://via.placeholder.com/300x200" alt="Château de Taillé" class="image">
-            <p>
-                Bienvenue dans le journal de la classe verte des CM2. Notre classe verte se déroule au magnifique 
-                château de Taillé, entouré de verdure et d'histoire. Ce séjour est une expérience unique qui mêle 
-                apprentissage, sport et nature.
-            </p>
-            <p>
-                Nous avons préparé ce journal pour partager avec vous nos aventures et nos découvertes. Toute la classe 
-                a contribué avec enthousiasme à la rédaction de ce journal, et nous espérons que vous apprécierez la lecture.
-            </p>
-            <a href="#details1" class="btn">Lire la suite</a>
-        </div>
+        <section>
+            <h2>Bienvenue dans le journal de la classe verte des CM2</h2>
+            <p>Notre classe verte se passe à Fondettes au château de Taillé, je vous souhaite une bonne lecture.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Château de Taillé">
+        </section>
 
-        <!-- Article 2 -->
-        <div class="article">
+        <section>
+            <h2>Y aura des activités de sport et du travail de science</h2>
+            <p>Notre classe s'est motivée pour réaliser ce projet et nous avions tous hâte.</p>
+        </section>
+
+        <section>
             <h2>Chapitre 1 : Avant la classe verte</h2>
-            <img src="https://via.placeholder.com/300x200" alt="Préparatifs" class="image">
-            <p>
-                Avant notre départ pour le château de Taillé, toute la classe était en effervescence. Les préparatifs
-                étaient intenses, et tout le monde s'est investi pour que ce séjour soit une réussite. Les parents et 
-                les enseignants ont travaillé ensemble pour organiser chaque détail.
-            </p>
-            <p>
-                Les élèves ont exprimé leur enthousiasme à travers des dessins et des lettres, et certains ont même 
-                commencé à rêver des aventures qu'ils vivraient. Ce fut un moment de joie et d'anticipation !
-            </p>
-            <a href="#details2" class="btn">Lire la suite</a>
-        </div>
+            <p>Durant cette classe verte en plus d'admirer le château, il...</p>
+        </section>
 
-        <!-- Article 3 -->
-        <div class="article">
-            <h2>Chapitre 2 : Les activités phares</h2>
-            <img src="https://via.placeholder.com/300x200" alt="Activités" class="image">
-            <p>
-                Pendant notre séjour, nous avons participé à une variété d'activités passionnantes. De la randonnée à 
-                travers les magnifiques forêts environnantes, à des ateliers scientifiques sur la biodiversité, chaque 
-                moment était une opportunité d'apprentissage et de plaisir.
-            </p>
-            <p>
-                Les soirées étaient également mémorables, avec des contes autour du feu et des jeux de groupe. Nous avons 
-                appris à mieux nous connaître et à travailler ensemble, renforçant ainsi notre esprit de classe.
-            </p>
-            <a href="#details3" class="btn">Lire la suite</a>
-        </div>
+        <a href="page2.html" class="next-button">Page suivante</a>
     </main>
 
     <footer>
