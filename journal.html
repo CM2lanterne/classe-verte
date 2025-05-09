@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal de la Classe Verte</title>
+    <style>
+        /* Style global */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .section {
+            margin: 20px auto;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            margin-top: 0;
+        }
+        .content {
+            display: none;
+            margin-top: 10px;
+        }
+        .toggle-button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .toggle-button:hover {
+            background-color: #2980b9;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Journal de la Classe Verte</h1>
+
+    <div class="section">
+        <h2>Bienvenue</h2>
+        <p>
+            Bienvenue dans le journal de la classe verte des **CM2**. Notre classe verte se passe à **Fondettes** au château de Taillé.
+            Nous vous invitons à découvrir nos aventures, nos activités sportives et scientifiques, ainsi que les moments partagés.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Chapitre 1 : Avant la Classe Verte</h2>
+        <p>
+            Ce chapitre évoque les préparatifs avant la classe verte. Toute la classe était motivée et impatiente de découvrir l'expérience
+            unique qui nous attendait.
+        </p>
+        <button class="toggle-button" onclick="toggleContent('content1')">Afficher plus</button>
+        <div id="content1" class="content">
+            <p>
+                Les élèves étaient engagés dans la préparation des activités, et les parents ont aidé à organiser les valises
+                et les documents nécessaires. Nous avions tous hâte de découvrir le château et de participer aux ateliers scientifiques.
+            </p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Chapitre 2 : Les Activités</h2>
+        <p>
+            Découvrez les activités sportives et scientifiques réalisées lors de la classe verte.
+        </p>
+        <button class="toggle-button" onclick="toggleContent('content2')">Afficher plus</button>
+        <div id="content2" class="content">
+            <ul>
+                <li>Randonnée dans la forêt environnante</li>
+                <li>Ateliers sur la biodiversité et sur les libellules</li>
+                <li>Sports collectifs : mini jo , jeux en plein air</li>
+                <li>Soirée autour du feu avec des chamallow et chansons</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // Fonction pour afficher/masquer le contenu d'une section
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
