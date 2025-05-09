@@ -11,92 +11,172 @@
             line-height: 1.6;
             background-color: #f8f9fa;
             color: #333;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
         }
-        h1, h2 {
-            color: #2c3e50;
+
+        header {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 20px 15px;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        main {
+            padding: 20px;
+        }
+
         .section {
             margin: 20px auto;
-            padding: 15px;
+            padding: 20px;
             border-radius: 8px;
-            background-color: #fff;
+            background: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1.2s ease;
+            position: relative;
+            overflow: hidden;
         }
+
         .section h2 {
             margin-top: 0;
+            color: #2E7D32;
         }
-        .content {
-            display: none;
-            margin-top: 10px;
+
+        .section p, .section ul {
+            margin: 10px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
         }
+
+        .section:hover p, .section:hover ul {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Boutons interactifs */
         .toggle-button {
-            display: block;
-            margin: 10px auto;
+            display: inline-block;
+            margin: 10px 0;
             padding: 10px 15px;
-            background-color: #3498db;
+            background-color: #4CAF50;
             color: white;
             border: none;
             border-radius: 5px;
-            font-size: 16px;
             cursor: pointer;
-            text-align: center;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
         }
+
         .toggle-button:hover {
-            background-color: #2980b9;
+            background-color: #388E3C;
         }
-        .footer {
+
+        .content {
+            display: none;
+            margin-top: 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        footer {
             text-align: center;
-            margin-top: 30px;
+            padding: 10px;
+            background: #2E7D32;
+            color: white;
+            margin-top: 20px;
             font-size: 14px;
-            color: #777;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Journal de la Classe Verte</h1>
+    <header>
+        <h1>Journal de la Classe Verte</h1>
+        <p>Découvrez nos aventures au château de Taillé à Fondettes</p>
+    </header>
 
-    <div class="section">
-        <h2>Bienvenue</h2>
-        <p>
-            Bienvenue dans le journal de la classe verte des **CM2**. Notre classe verte se passe à **Fondettes** au château de Taillé.
-            Nous vous invitons à découvrir nos aventures, nos activités sportives et scientifiques, ainsi que les moments partagés.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>Chapitre 1 : Avant la Classe Verte</h2>
-        <p>
-            Ce chapitre évoque les préparatifs avant la classe verte. Toute la classe était motivée et impatiente de découvrir l'expérience
-            unique qui nous attendait.
-        </p>
-        <button class="toggle-button" onclick="toggleContent('content1')">Afficher plus</button>
-        <div id="content1" class="content">
+    <main>
+        <!-- Section Bienvenue -->
+        <div class="section">
+            <h2>Bienvenue</h2>
             <p>
-                Les élèves étaient engagés dans la préparation des activités, et les parents ont aidé à organiser les valises
-                et les documents nécessaires. Nous avions tous hâte de découvrir le château et de participer aux ateliers scientifiques.
+                Bienvenue dans le journal de la classe verte des **CM2**. Notre classe verte se passe à **Fondettes** au château de Taillé.
+                Nous vous invitons à découvrir nos aventures, nos activités sportives et scientifiques, ainsi que les moments partagés.
             </p>
         </div>
-    </div>
 
-    <div class="section">
-        <h2>Chapitre 2 : Les Activités</h2>
-        <p>
-            Découvrez les activités sportives et scientifiques réalisées lors de la classe verte.
-        </p>
-        <button class="toggle-button" onclick="toggleContent('content2')">Afficher plus</button>
-        <div id="content2" class="content">
-            <ul>
-                <li>Randonnée dans la forêt environnante</li>
-                <li>Ateliers sur la biodiversité et sur les libellules</li>
-                <li>Sports collectifs : mini jo , jeux en plein air</li>
-                <li>Soirée autour du feu avec des chamallow et chansons</li>
-            </ul>
+        <!-- Section Chapitre 1 -->
+        <div class="section">
+            <h2>Chapitre 1 : Avant la Classe Verte</h2>
+            <p>
+                Ce chapitre évoque les préparatifs avant la classe verte. Toute la classe était motivée et impatiente de découvrir l'expérience
+                unique qui nous attendait.
+            </p>
+            <button class="toggle-button" onclick="toggleContent('content1')">Afficher plus</button>
+            <div id="content1" class="content">
+                <p>
+                    Les élèves étaient engagés dans la préparation des activités, et les parents ont aidé à organiser les valises
+                    et les documents nécessaires. Nous avions tous hâte de découvrir le château et de participer aux ateliers scientifiques.
+                </p>
+            </div>
         </div>
-    </div>
+
+        <!-- Section Chapitre 2 -->
+        <div class="section">
+            <h2>Chapitre 2 : Les Activités</h2>
+            <p>
+                Découvrez les activités sportives et scientifiques réalisées lors de la classe verte.
+            </p>
+            <button class="toggle-button" onclick="toggleContent('content2')">Afficher plus</button>
+            <div id="content2" class="content">
+                <ul>
+                    <li>Randonnée dans la forêt environnante</li>
+                    <li>Ateliers sur la biodiversité et sur les libellules</li>
+                    <li>Sports collectifs : mini jo, jeux en plein air</li>
+                    <li>Soirée autour du feu avec des chamallows et chansons</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Merci de nous suivre dans cette aventure ! 😊</p>
+    </footer>
+
     <script>
-        // Fonction pour afficher/masquer le contenu d'une section
+        // Fonction pour afficher ou masquer le contenu avec une animation fluide
         function toggleContent(id) {
             const content = document.getElementById(id);
             if (content.style.display === 'block') {
